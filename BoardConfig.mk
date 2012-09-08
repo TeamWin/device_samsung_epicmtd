@@ -69,11 +69,11 @@ BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 BOARD_KERNEL_PAGESIZE := 4096
 
 # Define kernel config for inline building
-TARGET_KERNEL_CONFIG := cyanogenmod_epicmtd_defconfig
-TARGET_KERNEL_SOURCE := kernel/samsung/victory/Kernel/
+#TARGET_KERNEL_CONFIG := cyanogenmod_epicmtd_defconfig
+#TARGET_KERNEL_SOURCE := kernel/samsung/victory/Kernel/
 
 # Fallback
-TARGET_PREBUILT_KERNEL := device/samsung/epicmtd/kernel
+TARGET_PREBUILT_KERNEL := device/samsung/epicmtd/prebuilt/kernel
 
 # WIFI defines
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -96,3 +96,9 @@ BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/samsung/epicmtd/recovery_ui.c
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/epicmtd/shbootimg.mk
 TARGET_OTA_ASSERT_DEVICE := epic,epicmtd,SPH-D700
+
+#TWRP
+DEVICE_RESOLUTION := 480x800
+TW_INCLUDE_INJECTTWRP := true
+TW_NO_REBOOT_BOOTLOADER := true
+TWRP_CUSTOM_KEYBOARD := ../../../device/samsung/epicmtd/recovery/hardwarekeyboard.cpp

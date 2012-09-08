@@ -16,6 +16,8 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
+ifneq ($(filter epicmtd,$(TARGET_DEVICE)),)
+
 LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := bdaddr_read.c
@@ -26,3 +28,4 @@ LOCAL_MODULE := bdaddr_read
 
 include $(BUILD_EXECUTABLE)
 
+endif
